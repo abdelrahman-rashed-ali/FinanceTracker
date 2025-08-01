@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">FinanceTracker</string>
+    <string name="headerword">Finance Tracker</string>
+    <string name="welcome_main">Welcome, Sprints</string>
+    <string name="main_description">Track your expenses, manage your budget, and achieve your financial goals.</string>
+    <string name="main_btn_text">Open Finance Tracker</string>
+    <string name="add_expense">Add Expense</string>
+    <string name="expense_name">Expense name</string>
+    <string name="expense_anount">Expense anount</string>
+    <string name="category">Category</string>
+    <string name="save_expense">Save Expense</string>
+    <string name="it_s_okay_to_estimate_you_can_update_this_later">It’s okay to estimate. You can update this later.</string>
+</resources>
