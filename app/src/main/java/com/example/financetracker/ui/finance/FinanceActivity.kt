@@ -7,21 +7,21 @@ import android.util.Log
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.ImageButton
-import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.financetracker.R
+import com.example.financetracker.ui.main.TAG
 import com.google.android.material.textfield.MaterialAutoCompleteTextView
 
+
 class FinanceActivity : AppCompatActivity() {
-    private val TAG = "FinanceActivity"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_finance)
-        Log.d(TAG, "onCreate called")
+        Log.d(TAG, "Finance ▶ onCreate() called")
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -35,7 +35,7 @@ class FinanceActivity : AppCompatActivity() {
         val adapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, items)
         categoryAutoComplete.setAdapter(adapter)
 
-        findViewById<ImageButton>(R.id.arrowBack).setOnClickListener{
+        findViewById<ImageButton>(R.id.arrowBack).setOnClickListener {
             finish()
         }
     }
@@ -46,15 +46,34 @@ class FinanceActivity : AppCompatActivity() {
         context: Context,
         attrs: AttributeSet
     ): View? {
-        Log.d(TAG, "hello from onCreateView")
+        Log.d(TAG, "Finance ▶ hello from onCreateView")
         return super.onCreateView(parent, name, context, attrs)
     }
 
-    override fun onStart() { super.onStart(); Log.d(TAG, "onStart called") }
-    override fun onResume() { super.onResume(); Log.d(TAG, "onResume called") }
-    override fun onPause() { super.onPause(); Log.d(TAG, "onPause called") }
-    override fun onStop() { super.onStop(); Log.d(TAG, "onStop called") }
-    override fun onDestroy() { super.onDestroy(); Log.d(TAG, "onDestroy called") }
+    override fun onStart() {
+        super.onStart(); Log.d(TAG, "Finance ▶ onStart() called")
+    }
+
+    override fun onResume() {
+        super.onResume(); Log.d(TAG, "Finance ▶ onResume() called")
+    }
+
+    override fun onPause() {
+        super.onPause(); Log.d(TAG, "Finance ▶ onPause() called")
+    }
+
+    override fun onStop() {
+        super.onStop(); Log.d(TAG, "Finance ▶ onStop() called")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy(); Log.d(TAG, "Finance ▶ onDestroy() called")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.d(TAG, "Finance ▶ onRestart() called")
+    }
 
 
 }

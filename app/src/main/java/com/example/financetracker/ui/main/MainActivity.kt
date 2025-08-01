@@ -12,8 +12,9 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.financetracker.R
 import com.example.financetracker.ui.finance.FinanceActivity
 
+ const val TAG = "lifeCycle"
+
 class MainActivity : AppCompatActivity() {
-    private val TAG = "MainActivity"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -26,25 +27,40 @@ class MainActivity : AppCompatActivity() {
 
 
         val mainBtn = findViewById<Button>(R.id.main_btn)
-        mainBtn.setOnClickListener{
+        mainBtn.setOnClickListener {
             val intent = Intent(this, FinanceActivity::class.java)
             startActivity(intent)
         }
 
         val shareButton = findViewById<ImageView>(R.id.share_btn)
-        shareButton.setOnClickListener{
+        shareButton.setOnClickListener {
             val shareIntent = Intent(Intent.ACTION_SEND)
             shareIntent.type = "text/plain"
             shareIntent.putExtra(Intent.EXTRA_TEXT, "Hello from Finance Tracker App!")
             startActivity(Intent.createChooser(shareIntent, "Share via"))
 
         }
+        Log.d(TAG, "Main ▶ onCreate() called")
 
     }
 
-    override fun onStart() { super.onStart(); Log.d(TAG, "onStart called") }
-    override fun onResume() { super.onResume(); Log.d(TAG, "onResume called") }
-    override fun onPause() { super.onPause(); Log.d(TAG, "onPause called") }
-    override fun onStop() { super.onStop(); Log.d(TAG, "onStop called") }
-    override fun onDestroy() { super.onDestroy(); Log.d(TAG, "onDestroy called") }
+    override fun onStart() {
+        super.onStart(); Log.d(TAG, "Main ▶ onStart() called")
+    }
+
+    override fun onResume() {
+        super.onResume(); Log.d(TAG, "Main ▶ onResume() called")
+    }
+
+    override fun onPause() {
+        super.onPause(); Log.d(TAG, "Main ▶ onPause() called")
+    }
+
+    override fun onStop() {
+        super.onStop(); Log.d(TAG, "Main ▶ onStop() called")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy(); Log.d(TAG, "Main ▶ onDestroy() called")
+    }
 }
