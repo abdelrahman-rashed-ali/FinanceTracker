@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         shareButton.setOnClickListener {
             val shareIntent = Intent(Intent.ACTION_SEND)
             shareIntent.type = "text/plain"
-            shareIntent.putExtra(Intent.EXTRA_TEXT, "Hello from Finance Tracker App!")
+            shareIntent.putExtra(Intent.EXTRA_TEXT, "I just added a new expense: Lunch — $10")
             startActivity(Intent.createChooser(shareIntent, "Share via"))
 
         }

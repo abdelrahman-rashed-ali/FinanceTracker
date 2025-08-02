@@ -40,15 +40,6 @@ class FinanceActivity : AppCompatActivity() {
         }
     }
 
-    override fun onCreateView(
-        parent: View?,
-        name: String,
-        context: Context,
-        attrs: AttributeSet
-    ): View? {
-        Log.d(TAG, "Finance ▶ hello from onCreateView")
-        return super.onCreateView(parent, name, context, attrs)
-    }
 
     override fun onStart() {
         super.onStart(); Log.d(TAG, "Finance ▶ onStart() called")
